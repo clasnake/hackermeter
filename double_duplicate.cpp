@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <cstring>
 using namespace std;
 
@@ -10,7 +9,7 @@ int main()
 	while (T--) {
 		int x;
 		cin >> x;
-		bool* flag = (bool*)malloc(sizeof(bool) * x);
+		bool *flag = new bool[x];
 		memset(flag, false, sizeof(bool) * x);
 		int y = x + 2;
 		while (y--) {
@@ -28,6 +27,7 @@ int main()
 				cout << i << endl;
 			}
 		}
+		delete[] flag;
 	}
 	return 0;
 }
