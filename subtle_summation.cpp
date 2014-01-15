@@ -23,6 +23,7 @@ bool zero_1(int *a, int n)
 			return true;
 		}
 	}
+	delete [] b;
 	return false;
 }
 
@@ -53,6 +54,7 @@ bool zero_2(int *a, int n)
 			return true;
 		}
 	}
+	delete [] b;
 	return false;
 }
 
@@ -73,6 +75,7 @@ int main()
 		else {
 			cout << "nonzero" << endl;
 		}
+		delete [] a;
 	}
 	return 0;
 }
