@@ -43,13 +43,7 @@ int main()
 		}
 		map<string, int> str_int_map;
 		for (list<string>::iterator iter = str_list.begin(); iter != str_list.end(); iter++) {
-			map<string, int>::iterator map_iter = str_int_map.find(*iter);
-			if (map_iter == str_int_map.end()) {
-				str_int_map.insert(pair<string, int>(*iter, 1));
-			}
-			else {
-				map_iter->second++;
-			}
+			str_int_map[*iter]++;
 		}
 		for (map<string, int>::iterator iter = str_int_map.begin(); iter != str_int_map.end(); iter++) {
 			if (iter->second >= 2) {

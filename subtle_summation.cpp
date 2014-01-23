@@ -42,12 +42,7 @@ bool zero_2(int *a, int n)
 		if (b[i] == 0) {
 			return true;
 		}
-		if (!long_int_map.count(b[i])) {
-			long_int_map.insert(pair<long, int>(b[i], 1));
-		}
-		else {
-			long_int_map[b[i]]++;
-		}
+		long_int_map[b[i]]++;
 	}
 	for (map<long, int>::iterator iter = long_int_map.begin(); iter != long_int_map.end(); iter++) {
 		if (iter->second >= 2) {
