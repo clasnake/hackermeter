@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-long long solve(int n)
+long long solve_1(int n)
 {
     long long *res = new long long[n + 1];
     switch (n) {
@@ -22,6 +22,29 @@ long long solve(int n)
     return x;
 }
 
+long long solve_2(int n)
+{
+    switch (n) {
+    case 1: return 1;
+    case 2: return 2;
+    case 3: return 3;
+    case 4: return 6;
+    }
+    long long a = 1;
+    long long b = 2;
+    long long c = 3;
+    long long d = 6;
+    long long res;
+    for (int i = 5; i <= n; i++) {
+        res = d + c + a;
+        a = b;
+        b = c;
+        c = d;
+        d = res;
+    }
+    return d;
+}
+
 int main()
 {
     int T;
@@ -29,7 +52,7 @@ int main()
     while (T--) {
         int x;
         cin >> x;
-        cout << solve(x) << endl;
+        cout << solve_2(x) << endl;
     }
     return 0;
 }
